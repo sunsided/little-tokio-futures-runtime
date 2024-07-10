@@ -22,7 +22,7 @@ impl Delay {
     }
 
     fn check_waker(waker: Arc<Mutex<Option<Waker>>>, when: Instant) {
-        // Test if the wait is over.
+        // If the wait is over, immediately call the waker and ignore the sleep.
         let now = Instant::now();
         if now >= when {
             if let Some(w) = waker.lock().unwrap().take() {
@@ -31,7 +31,7 @@ impl Delay {
             return;
         }
 
-        // Actively wait in the background.
+        // Actively wait in the background. Not optimal, but gets the job done.
         let wait_time = when - now;
         thread::spawn(move || {
             thread::sleep(wait_time);
