@@ -1,0 +1,14 @@
+[package]
+name = "futures-runtime"
+version = "0.1.0"
+edition = "2021"
+
+[[example]]
+name = "tasks"
+path = "examples/tasks.rs"
+
+[dependencies]
+futures = "0.3.30"
+
+[dev-dependencies]
+futures-time = "3.0.0"
