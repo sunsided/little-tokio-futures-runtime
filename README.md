@@ -1,7 +1,9 @@
 # Little Tokio: A trivial futures/`async` runtime in Rust
 
-This is a playground project to better understand the internals
-of how futures work in Rust.
+This is a toy futures executor / `async` runtime built to better understand the internals
+of how futures work in Rust. The name, of course, being inspired by [tokio](https://github.com/tokio-rs/tokio).
+
+TL;DR:
 
 ```shell
 cargo run --example tasks
